@@ -1,16 +1,17 @@
+import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { VariationProvider } from "./hooks/useVariation";
-import { Dashboard } from "./screens/Dashboard";
-import Tips from "./screens/Tips";
+import { AppRoutes } from "./routes/app.routes";
 
 export default function App() {
     const toogle = true;
     return (
-        <VariationProvider>
-            {toogle && <Dashboard />}
-            {!toogle && <Tips />}
-            <StatusBar style="light" />
-        </VariationProvider>
+        <NavigationContainer>
+            <VariationProvider>
+                <AppRoutes />
+                <StatusBar style="light" />
+            </VariationProvider>
+        </NavigationContainer>
     );
 }

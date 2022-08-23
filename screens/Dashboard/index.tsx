@@ -1,4 +1,5 @@
 import { Feather } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 import React, { useCallback, useEffect, useState } from "react";
 import InfoCard from "../../components/InfoCard";
 import { ITickerDTO } from "../../dtos/ITickerDTO";
@@ -33,6 +34,7 @@ const Dashboard: React.FC = () => {
     const [btc, setBtc] = useState<ITickerDTO>(initialState);
     const [counter, setCounter] = useState(standardRefresh);
     const { setIsNegative } = useVariation();
+    const navigation = useNavigation();
 
     const getCurrentBtcValue = useCallback(async () => {
         try {
@@ -74,7 +76,7 @@ const Dashboard: React.FC = () => {
             </MidContainer>
 
             <BottomContainer>
-                <DonationButton onPress={() => console.log("preessed")}>
+                <DonationButton onPress={() => navigation.navigate("Tips")}>
                     <DonationText>Que tal deixar um cafézinho?</DonationText>
                     <IconContainer>
                         <Feather name="coffee" size={24} color="white" />

@@ -1,4 +1,5 @@
 import { AntDesign, Feather } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { useVariation } from "../../hooks/useVariation";
 import {
@@ -14,11 +15,12 @@ import {
 
 const Tips: React.FC = () => {
     const { isNegative } = useVariation();
+    const navigation = useNavigation();
     return (
         <>
             <Container isNegative={isNegative}>
                 <Content>
-                    <LeftContainer onPress={() => console.log("Press")}>
+                    <LeftContainer onPress={() => navigation.goBack()}>
                         <AntDesign name="arrowleft" size={36} color="white" />
                     </LeftContainer>
                     <CenterContainer>
