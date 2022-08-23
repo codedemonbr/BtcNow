@@ -1,20 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { VariationProvider } from "./hooks/useVariation";
+import { Dashboard } from "./screens/Dashboard";
+import Tips from "./screens/Tips";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    const toogle = true;
+    return (
+        <VariationProvider>
+            {toogle && <Dashboard />}
+            {!toogle && <Tips />}
+            <StatusBar style="light" />
+        </VariationProvider>
+    );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
