@@ -16,6 +16,8 @@ import {
     TopContainer,
 } from "./styles";
 
+import { BackHandler } from "react-native";
+
 const initialState = {
     avg: 0,
     buy: 0,
@@ -59,6 +61,11 @@ const Dashboard: React.FC = () => {
             }, 1000);
         }
     }, [counter]);
+
+    useEffect(() => {
+        BackHandler.addEventListener("backPress", () => true);
+        return () => BackHandler.removeEventListener("backPress", () => true);
+    }, []);
 
     return (
         <Container isNegative={btc.var < 0}>
