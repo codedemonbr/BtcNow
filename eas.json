@@ -1,6 +1,6 @@
 {
   "cli": {
-    "version": ">= 1.1.1"
+    "version": ">= 1.1.2"
   },
   "build": {
     "development": {
@@ -10,7 +10,11 @@
     "preview": {
       "distribution": "internal"
     },
-    "production": {}
+    "production": {
+      "android": {
+        "gradleCommand": ":app:assembleRelease"
+      }
+    }
   },
   "submit": {
     "production": {}

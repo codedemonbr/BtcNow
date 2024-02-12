@@ -1,12 +1,19 @@
 export interface ITickerDTO {
-    avg: number;
-    buy: number;
-    high: number;
-    low: number;
-    market: string;
-    sell: number;
-    success: boolean;
-    timestamp: string;
-    var: number;
-    vol: number;
+  BTCBRL: ICurrency;
+  EURBRL: ICurrency;
+  USDBRL: ICurrency;
+}
+
+export interface ICurrency {
+  code: string;
+  codein: string;
+  name: string;
+  high: string;
+  low: string;
+  varBid: string;
+  pctChange: string;
+  bid: string;
+  ask: string;
+  timestamp: string;
+  create_date: string;
 }
