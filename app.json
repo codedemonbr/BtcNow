@@ -2,7 +2,7 @@
   "expo": {
     "name": "BtcNow",
     "slug": "BtcNow",
-    "version": "1.0.2",
+    "version": "1.0.4",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -24,8 +24,8 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.codedemonbr.BtcNow",
-      "versionCode": 2,
-      "version": "1.0.2"
+      "versionCode": 47,
+      "version": "1.0.4"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -34,6 +34,22 @@
       "eas": {
         "projectId": "73882267-0973-4b90-89e2-9e58341c0fa7"
       }
-    }
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 33,
+            "targetSdkVersion": 33,
+            "buildToolsVersion": "33.0.0",
+            "minSdkVersion": 31
+          },
+          "ios": {
+            "deploymentTarget": "13.0"
+          }
+        }
+      ]
+    ]
   }
 }
