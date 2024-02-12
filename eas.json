@@ -12,7 +12,7 @@
     },
     "production": {
       "android": {
-        "gradleCommand": ":app:assembleRelease"
+        "buildType": "app-bundle"
       }
     }
   },
